@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import axios from "axios";
+import styled from "styled-components";
 import Card from "./components/Card.js";
 import FollowerCards from "./components/FollowerCards.js";
 
@@ -44,12 +45,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <Div>
         <Card key={0} user={this.state["javavick"]} />
         <FollowerCards followers={this.state["followers"]} />
-      </div>
+      </Div>
     );
   }
 }
+
+const Div = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: gray;
+`;
 
 export default App;
